@@ -160,28 +160,28 @@ jobs:
     #  - IN: fl-ddccluster
       
 #runSh
-  - name: fl-inrunsh
-    type: runSh
-    steps:
-      - IN: fl-sample-script1
-        versionName: "149dc247602ba40192703b5fe0a1bfae01bd8490"
-      - IN: fl-tg2
-      - IN: fl-img1
-      - IN: fl-man1
-      - TASK:
-      #  - script: ls
-       # - script: ./IN/fl-sample-script/gitRepo/echo.sh
-        - script: sudo apt-get install tree
-        - script: tree -F IN
-        - script: cat IN/fl-man1/integration.json
-      #  - script: export versionName=$(cat ./IN/fl-img1/version.json | jq -r '.version.versionName')
-        - script: . IN/fl-sample-script1/gitRepo/echo.sh
+  # - name: fl-inrunsh
+  #   type: runSh
+  #   steps:
+  #     - IN: fl-sample-script1
+  #       versionName: "149dc247602ba40192703b5fe0a1bfae01bd8490"
+  #     - IN: fl-tg2
+  #     - IN: fl-img1
+  #     - IN: fl-man1
+  #     - TASK:
+  #     #  - script: ls
+  #     # - script: ./IN/fl-sample-script/gitRepo/echo.sh
+  #       - script: sudo apt-get install tree
+  #       - script: tree -F IN
+  #       - script: cat IN/fl-man1/integration.json
+  #     #  - script: export versionName=$(cat ./IN/fl-img1/version.json | jq -r '.version.versionName')
+  #       - script: . IN/fl-sample-script1/gitRepo/echo.sh
         
-  - name: fl-inrunsh2
-    type: runSh
-    steps:
-      - IN: fl-sample-script2
-      - IN: fl-tg6
-      - TASK:
-        - script: ls
-        - script: ./IN/fl-sample-script2/gitRepo/echo.sh
+  # - name: fl-inrunsh2
+  #   type: runSh
+  #   steps:
+  #     - IN: fl-sample-script2
+  #     - IN: fl-tg6
+  #     - TASK:
+  #       - script: ls
+  #       - script: ./IN/fl-sample-script2/gitRepo/echo.sh
