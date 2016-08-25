@@ -1,0 +1,55 @@
+triggers:
+   - name: fl-tg1
+     type: trigger
+     version:
+       counter: 3
+       
+   - name: fl-tg2
+     type: trigger
+     version:
+       counter: 3
+       
+   - name: fl-tg3
+     type: trigger
+     version:
+       counter: 2
+       
+   - name: fl-tg4
+     type: trigger
+     version:
+       counter: 2
+       
+   - name: fl-tg5
+     type: trigger
+     version:
+       counter: 0
+       
+   - name: fl-tg6
+     type: trigger
+     version:
+       counter: 2
+       
+   - name: fl-tg7
+     type: trigger
+     version:
+       counter: 2
+       
+   - name: fl-tg8
+     type: trigger
+     version:
+       counter: 1
+       
+   - name: fl-tg9
+     type: trigger
+     version:
+       counter: 0
+       
+   - name: fl-tg10
+     type: trigger
+     version:
+       counter: 0
+       
+   - name: fl-tg11
+     type: trigger
+     version:
+       counter: 0
