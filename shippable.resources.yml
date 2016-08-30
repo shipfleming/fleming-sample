@@ -1,14 +1,7 @@
-#IMAGES
-
-#VERSIONS
-
-  - name: extdopt-version
-    type: version
-    seed:
-      versionName: "1.2.123-beta"
+resources:
 
 #INTEGRATION
 
-  - name: extdopt-dockerintegration
+  - name: extdopt-awsintegration
     type: integration
-    integration: "plv2-docker"
+    integration: "plv2-ecs"
