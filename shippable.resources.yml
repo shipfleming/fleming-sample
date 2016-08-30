@@ -145,6 +145,7 @@ resources:
   - name: fl-email
     type: notification
     pointer:
+      method: email
       recipients: 
         - "varsha@shippable.com"
         - "shiphitchcock1@gmail.com"
@@ -152,7 +153,7 @@ resources:
 #INTEGRATION
 
   - name: fl-dockerintegration
-    type: notification
+    type: integration
     integration: "plv2-docker"
         
 # DOCKER OPTIONS:
