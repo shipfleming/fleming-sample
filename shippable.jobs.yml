@@ -1,189 +1,67 @@
 jobs:
-
-#RELEASE
-
-  - name: fl-release
-    type: release
-    steps:
-      - IN: fl-version
-        #versionName: testrelease
-      - TASK: managed
-        bump: beta
-      - IN: fl-tg3
-    flags:
-      - release_flmaster
       
 #MANIFESTS
       
-  - name: fl-manifest1
+  - name: extdopt-manifest1
     type: manifest
     steps:
       - IN: fl-image1
        # versionNumber: 100
-      - IN: fl-tg1
+      - IN: extdopt-tg1
+    flags:
+      - man_flextdpots
       
-  - name: fl-manifest2multiimg
+  - name: extdopt-manifest2multiimg
     type: manifest
     steps:
       - IN: fl-image2
       - IN: fl-image7workingdir
-     # - IN: fltp-dopts2
       - IN: flecs-dopts4
         applyTo:
           - fl-image2
-      - IN: fl-tg2
+      - IN: extdopt-tg2
       
-#   - name: fl-manifest3env
-#     type: manifest
-#     steps:
-#       - IN: fl-image5env
-#       - IN: fl-params1
-#       - IN: fl-params2
-#       - IN: fl-tg3
+  - name: extdopt-manifest3entrypt
+    type: manifest
+    steps:
+      - IN: fl-image6entrypoint
+      - IN: extdopt-tg3
       
-#   - name: fl-manifest4entrypoint
-#     type: manifest
-#     steps:
-#       - IN: fl-image6entrypoint
-#       - TASK: managed
-#       - IN: fl-tg4
+  - name: extdopt-manifest4driftking
+    type: manifest
+    steps:
+      - IN: fl-image7workingdir
+      - IN: extdopt-tg4
       
-#   - name: fl-manifest5driftking
-#     type: manifest
-#     steps:
-#       - IN: fl-image7workingdir
-#       - IN: fl-tg5
-#       - TASK: managed
-  
-#   - name: fl-manifest6redismftomf
-#     type: manifest
-#     steps:
-#       - IN: fl-image8redis
-#       - IN: fl-manifest1
-#         switch: off
-      
-#   - name: fl-manifest7invalid
-#     type: manifest
-#     steps:
-#       - IN: fl-image1
-#       - IN: fl-dopts6invalid
-#       - IN: fl-tg7
-      
-#   - name: fl-manifest8
-#     type: manifest
-#     steps:
-#       - IN: fl-image9
-#       - IN: fl-dopts6invalid
-#       - IN: fl-tg8
-      
-# # DEPLOYMENTS 
+#DEPLOYMENTS 
 
-#   - name: fl-ecsdeployup
-#     type: deploy
-#     steps:
-#       - IN: fl-manifest1
-#       - IN: fl-ecscluster
-#       - TASK: managed
-#         deployMethod: upgrade
-      
-#   #- name: fl-ecsdeploybg
-#   # type: deploy
-#     #steps:
-#     # - IN: fl-manifest4entrypoint
-#       #- IN: flecs-dopts4
-#       #- IN: fl-ecscluster
-      
-#   - name: fl-ecsdeployupmftomf
-#     type: deploy
-#     steps:
-#       - IN: fl-manifest6redismftomf
-#       - IN: fl-ecscluster
-#       - TASK: managed
-#         deployMethod: upgrade
-        
-#   - name: fl-ecsdeploybginvalid
-#     type: deploy
-#     steps:
-#       - IN: fl-manifest7invalid
-#       - IN: fl-ecscluster
-      
-  # - name: fl-ecsdeployuppm6436
-  #   type: deploy
-  #   steps:
-  #     - IN: fl-manifest8
-  #     - IN: fl-ecscluster
-  #     - TASK: managed
-  #       deployMethod: upgrade
-      
-  #- name: fl-tpdeployup
-   # type: deploy
-    #steps:
-     # - IN: fl-manifest1
-      #- IN: fltp-dopts1
-      #- IN: fl-tripubcluster
-    #  - TASK: managed
-     #   deployMethod: upgrade
-      
-  - name: fl-tpdeploybg1
+  - name: extdopt-ecsdeployup
     type: deploy
     steps:
-      - IN: fl-manifest1
-      - IN: fl-manifest2multiimg
-        switch: off
-      - IN: fl-dopts
+      - IN: extdopt-manifest1
+      - IN: fl-ecscluster
+      - TASK: managed
+        deployMethod: upgrade
+        
+  - name: extdopt-tpdeployup
+    type: deploy
+    steps:
+      - IN: extdopt-manifest2multiimg
+      - IN: fltp-dopts2
       - IN: fl-tripubcluster
-      
- # - name: fl-gkedeployup
-  #  type: deploy
-   # steps:
-    #  - IN: fl-manifest1
-      #- IN: flgke-dopts3
-     # - IN: fl-gkecluster
-      #- TASK: managed
-       # deployMethod: upgrade
-      
-  #- name: fl-gkedeploybg
-   # type: deploy
-    #steps:
-     # - IN: fl-manifest5driftking
-    #  - IN: flgke-dopts3
-     # - IN: fl-gkecluster
-      
- # - name: fl-dcldeploy
-  #  type: deploy
-   # steps:
-    #  - IN: fl-manifest10deployall
-     # - IN: fl-dclcluster
+      - TASK: managed
+        deployMethod: upgrade
         
-#  - name: fl-ddcdeploy
- #   type: deploy
-  #  steps:
-   #   - IN: fl-manifest10deployall
-    #  - IN: fl-ddccluster
-      
-#runSh
-  # - name: fl-inrunsh
-  #   type: runSh
-  #   steps:
-  #     - IN: fl-sample-script1
-  #       versionName: "149dc247602ba40192703b5fe0a1bfae01bd8490"
-  #     - IN: fl-tg2
-  #     - IN: fl-img1
-  #     - IN: fl-man1
-  #     - TASK:
-  #     #  - script: ls
-  #     # - script: ./IN/fl-sample-script/gitRepo/echo.sh
-  #       - script: sudo apt-get install tree
-  #       - script: tree -F IN
-  #       - script: cat IN/fl-man1/integration.json
-  #     #  - script: export versionName=$(cat ./IN/fl-img1/version.json | jq -r '.version.versionName')
-  #       - script: . IN/fl-sample-script1/gitRepo/echo.sh
+  - name: extdopt-ddcdeployep
+    type: deploy
+    steps:
+      - IN: extdopt-manifest3entrypt
+      - IN: extdopt-ddc1
+      - IN: fl-ddccluster
         
-  # - name: fl-inrunsh2
-  #   type: runSh
-  #   steps:
-  #     - IN: fl-sample-script2
-  #     - IN: fl-tg6
-  #     - TASK:
-  #       - script: ls
-  #       - script: ./IN/fl-sample-script2/gitRepo/echo.sh
+  - name: extdopt-ddcdeploywd
+    type: deploy
+    steps:
+      - IN: extdopt-manifest4driftking
+      - IN: extdopt-ddc2
+      - IN: fl-ddccluster
