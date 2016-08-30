@@ -16,7 +16,7 @@ jobs:
     steps:
       - IN: fl-image2
       - IN: fl-image7workingdir
-      - IN: flecs-dopts4
+      - IN: flecs-dopts5
         applyTo:
           - fl-image2
       - IN: extdopt-tg2
@@ -35,33 +35,51 @@ jobs:
       
 #DEPLOYMENTS 
 
-  - name: extdopt-ecsdeployup
+  - name: extdopt-ecsdeploywdir
     type: deploy
     steps:
-      - IN: extdopt-manifest1
+      - IN: extdopt-manifest2multiimg
       - IN: fl-ecscluster
       - TASK: managed
         deployMethod: upgrade
         
-  - name: extdopt-tpdeployup
+  - name: extdopt-ecsdeployept
     type: deploy
     steps:
-      - IN: extdopt-manifest2multiimg
-      - IN: fltp-dopts2
+      - IN: extdopt-manifest3entrypt
+      - IN: flecs-dopts4
+      - IN: fl-ecscluster
+      - TASK: managed
+        deployMethod: upgrade
+        
+#   - name: extdopt-tpdeployept #First deploy something in tripub n copy conatiner name n give in fltp-dopts2 resource
+#     type: deploy
+#     steps:
+#       - IN: extdopt-manifest3entrypt
+#       - IN: fltp-dopts2
+#       - IN: fl-tripubcluster
+#       - TASK: managed
+#         deployMethod: upgrade
+
+  - name: extdopt-tpdeploywdir
+    type: deploy
+    steps:
+      - IN: extdopt-manifest4driftking
+      - IN: fltp-dopts1
       - IN: fl-tripubcluster
       - TASK: managed
         deployMethod: upgrade
         
-  - name: extdopt-ddcdeployep
+  - name: extdopt-ddcdeployept
     type: deploy
     steps:
       - IN: extdopt-manifest3entrypt
       - IN: extdopt-ddc1
       - IN: fl-ddccluster
         
-  - name: extdopt-ddcdeploywd
-    type: deploy
-    steps:
-      - IN: extdopt-manifest4driftking
-      - IN: extdopt-ddc2
-      - IN: fl-ddccluster
+#   - name: extdopt-ddcdeploywdir #First deploy something in ddc n copy conatiner name n give in extdopt-ddc2 resource
+#     type: deploy
+#     steps:
+#       - IN: extdopt-manifest4driftking
+#       - IN: extdopt-ddc2
+#       - IN: fl-ddccluster
