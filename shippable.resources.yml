@@ -157,7 +157,7 @@ resources:
         
 # DOCKER OPTIONS:
 
-  - name: fl-doptsmem100
+  - name: fl-dopts
     type: dockerOptions
     version:
       memory: 100
