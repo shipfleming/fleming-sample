@@ -13,3 +13,33 @@ triggers:
      type: trigger
      version:
        counter: 0
+       
+   - name: extdopt-tg4
+     type: trigger
+     version:
+       counter: 0
+       
+   - name: extdopt-tg5
+     type: trigger
+     version:
+       counter: 0
+       
+   - name: extdopt-tg6
+     type: trigger
+     version:
+       counter: 0
+       
+   - name: extdopt-tg7
+     type: trigger
+     version:
+       counter: 0
+       
+   - name: extdopt-tg8
+     type: trigger
+     version:
+       counter: 0
+       
+   - name: extdopt-tg9
+     type: trigger
+     version:
+       counter: 0
