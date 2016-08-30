@@ -333,6 +333,6 @@ resources:
     type: gitRepo
     integration: "github"
     pointer:
-      sourceName: "shipfleming/fleming-sample"
-      branch: "gitRepo"
+      sourceName: "shipfleming/sample_script"
+      branch: "master"
     
