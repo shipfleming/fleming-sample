@@ -135,7 +135,7 @@ resources:
       
   - name: fl-slack
     type: notification
-    integration: "plv2-slackcock1"
+    integration: "plv2-slack"
     pointer:
       recipients:
         - "#pipeline-pvt"
