@@ -11,7 +11,7 @@ jobs:
         bump: beta
       - IN: fl-tg2
     flags:
-      - sample-fleming_master_rSync
+      - release_flmaster
       
 #MANIFESTS
       
@@ -27,93 +27,93 @@ jobs:
     steps:
       - IN: fl-image2
       - IN: fl-image5workingdir
-      - IN: fltp-dopts2
+     # - IN: fltp-dopts2
       - IN: flecs-dopts4
         applyTo:
           - fl-image2
       - IN: fl-tg2
       
-   - name: fl-manifest3env
-     type: manifest
-     steps:
-       - IN: fl-image5env
-       - IN: fl-params1
-       - IN: fl-params2
-       - IN: fl-tg3
+#   - name: fl-manifest3env
+#     type: manifest
+#     steps:
+#       - IN: fl-image5env
+#       - IN: fl-params1
+#       - IN: fl-params2
+#       - IN: fl-tg3
       
-   - name: fl-manifest4entrypoint
-     type: manifest
-     steps:
-       - IN: fl-image6entrypoint
-       - TASK: managed
-       - IN: fl-tg4
+#   - name: fl-manifest4entrypoint
+#     type: manifest
+#     steps:
+#       - IN: fl-image6entrypoint
+#       - TASK: managed
+#       - IN: fl-tg4
       
-   - name: fl-manifest5driftking
-     type: manifest
-     steps:
-       - IN: fl-image7workingdir
-       - IN: fl-tg5
-       - TASK: managed
+#   - name: fl-manifest5driftking
+#     type: manifest
+#     steps:
+#       - IN: fl-image7workingdir
+#       - IN: fl-tg5
+#       - TASK: managed
   
-   - name: fl-manifest6redismftomf
-     type: manifest
-     steps:
-       - IN: fl-image8redis
-       - IN: fl-manifest1
-        switch: off
+#   - name: fl-manifest6redismftomf
+#     type: manifest
+#     steps:
+#       - IN: fl-image8redis
+#       - IN: fl-manifest1
+#         switch: off
       
-  - name: fl-manifest7invalid
-    type: manifest
-    steps:
-      - IN: fl-image1
-      - IN: fl-dopts6invalid
-      - IN: fl-tg7
+#   - name: fl-manifest7invalid
+#     type: manifest
+#     steps:
+#       - IN: fl-image1
+#       - IN: fl-dopts6invalid
+#       - IN: fl-tg7
       
-  - name: fl-manifest8
-    type: manifest
-    steps:
-      - IN: fl-image9
-      - IN: fl-dopts6invalid
-      - IN: fl-tg8
+#   - name: fl-manifest8
+#     type: manifest
+#     steps:
+#       - IN: fl-image9
+#       - IN: fl-dopts6invalid
+#       - IN: fl-tg8
       
-# DEPLOYMENTS 
+# # DEPLOYMENTS 
 
-  - name: fl-ecsdeployup
-    type: deploy
-    steps:
-      - IN: fl-manifest1
-      - IN: fl-ecscluster
-      - TASK: managed
-        deployMethod: upgrade
+#   - name: fl-ecsdeployup
+#     type: deploy
+#     steps:
+#       - IN: fl-manifest1
+#       - IN: fl-ecscluster
+#       - TASK: managed
+#         deployMethod: upgrade
       
-  #- name: fl-ecsdeploybg
-   # type: deploy
-    #steps:
-     # - IN: fl-manifest4entrypoint
-      #- IN: flecs-dopts4
-      #- IN: fl-ecscluster
+#   #- name: fl-ecsdeploybg
+#   # type: deploy
+#     #steps:
+#     # - IN: fl-manifest4entrypoint
+#       #- IN: flecs-dopts4
+#       #- IN: fl-ecscluster
       
-  - name: fl-ecsdeployupmftomf
-    type: deploy
-    steps:
-      - IN: fl-manifest6redismftomf
-      - IN: fl-ecscluster
-      - TASK: managed
-        deployMethod: upgrade
+#   - name: fl-ecsdeployupmftomf
+#     type: deploy
+#     steps:
+#       - IN: fl-manifest6redismftomf
+#       - IN: fl-ecscluster
+#       - TASK: managed
+#         deployMethod: upgrade
         
-  - name: fl-ecsdeploybginvalid
-    type: deploy
-    steps:
-      - IN: fl-manifest7invalid
-      - IN: fl-ecscluster
+#   - name: fl-ecsdeploybginvalid
+#     type: deploy
+#     steps:
+#       - IN: fl-manifest7invalid
+#       - IN: fl-ecscluster
       
-  - name: fl-ecsdeployuppm6436
-    type: deploy
-    steps:
-      - IN: fl-manifest8
-      - IN: fl-ecscluster
-      - TASK: managed
-        deployMethod: upgrade
+  # - name: fl-ecsdeployuppm6436
+  #   type: deploy
+  #   steps:
+  #     - IN: fl-manifest8
+  #     - IN: fl-ecscluster
+  #     - TASK: managed
+  #       deployMethod: upgrade
       
   #- name: fl-tpdeployup
    # type: deploy
@@ -127,7 +127,8 @@ jobs:
   - name: fl-tpdeploybg
     type: deploy
     steps:
-      - IN: fl-manifest4entrypoint
+      - IN: fl-manifest1
+      - IN: fl-manifest2multiimg
         switch: off
       - IN: fl-tripubcluster
       
