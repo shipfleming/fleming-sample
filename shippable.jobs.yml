@@ -26,7 +26,7 @@ jobs:
     type: manifest
     steps:
       - IN: fl-image2
-      - IN: fl-image5workingdir
+      - IN: fl-image7workingdir
      # - IN: fltp-dopts2
       - IN: flecs-dopts4
         applyTo:
