@@ -9,7 +9,7 @@ jobs:
         #versionName: testrelease
       - TASK: managed
         bump: beta
-      - IN: fl-tg2
+      - IN: fl-tg3
     flags:
       - release_flmaster
       
