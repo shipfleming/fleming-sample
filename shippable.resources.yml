@@ -149,6 +149,12 @@ resources:
         - "varsha@shippable.com"
         - "shiphitchcock1@gmail.com"
         
+#INTEGRATION
+
+  - name: fl-dockerintegration
+    type: notification
+    integration: "plv2-docker"
+        
 # DOCKER OPTIONS:
 
   - name: fl-doptsmem100
