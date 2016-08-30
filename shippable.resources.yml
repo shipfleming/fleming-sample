@@ -144,7 +144,6 @@ resources:
 
   - name: fl-email
     type: notification
-    integration: "plv2-emailcock1"
     pointer:
       recipients: 
         - "varsha@shippable.com"
