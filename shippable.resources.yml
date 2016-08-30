@@ -227,6 +227,7 @@ resources:
       labels:
         labelone: valueOne
         labeltwo: valueTwo
+      readOnlyRootFilesystem : true
         
   - name: flecs-dopts4
     type: dockerOptions
@@ -262,6 +263,8 @@ resources:
       entryPoint:
         - '/bin/sh'
         - './entrypoint2.sh'
+      readOnlyRootFilesystem : true
+      network : "bridge"
        
   - name: flecs-dopts5
     type: dockerOptions
