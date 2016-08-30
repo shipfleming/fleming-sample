@@ -1,15 +1,15 @@
 triggers:
-   - name: fl-tg1
+   - name: extdopt-tg1
      type: trigger
      version:
-       counter: 3
+       counter: 0
        
-   - name: fl-tg2
+   - name: extdopt-tg2
      type: trigger
      version:
-       counter: 3
+       counter: 0
        
-   - name: fl-tg3
+   - name: extdopt-tg3
      type: trigger
      version:
-       counter: 2
+       counter: 0
