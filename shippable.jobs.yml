@@ -130,6 +130,7 @@ jobs:
       - IN: fl-manifest1
       - IN: fl-manifest2multiimg
         switch: off
+      - IN: fl-dopts
       - IN: fl-tripubcluster
       
  # - name: fl-gkedeployup
