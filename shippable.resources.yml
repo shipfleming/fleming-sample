@@ -151,6 +151,11 @@ resources:
         - "shiphitchcock1@gmail.com"
         
 # DOCKER OPTIONS:
+
+  - name: fl-doptsmem100
+    type: dockerOptions
+    version:
+      memory: 100
   
   - name: fltp-dopts1
     type: dockerOptions
