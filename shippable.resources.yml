@@ -267,9 +267,9 @@ resources:
     type: dockerOptions
     version:
       links:
-        - "fl-img5workingdir"
+        - "fl-image7workingdir"
       volumesFrom:
-        - "fl-img5workingdir:ro"
+        - "fl-image7workingdir:ro"
       user: "driftking"
       workingDir: "/makemeworking"
       cmd:
