@@ -5,3 +5,55 @@ resources:
   - name: extdopt-awsintegration
     type: integration
     integration: "plv2-ecs"
+    
+  - name: extdopt-ddc1
+    type: dockerOptions
+    version:
+      memory: 48
+      cpuShares: 2
+      privileged: false#
+      volumes:#
+      #  - "/host/path.2:/container/path:rw"
+       # - "/host/path:/container/path2:rw"
+        - "/host/path2:/container/path3:ro"
+        - "/host/path..2:/container/path4:rw"
+        - "/host/path..3:/container/path5:ro"
+        - "/abcdefghijklmnopqrstuvwxyz/abcdefghijklmnopqrstuvwxyz/abcdefghijklmnopqrstuvwxyz/abcdefghijklmnopqrstuvwxyz/abcdefghijklmnopqrstuvwxyz/abcdefghijklmnopqrstuvwxyz/abcdefghijklmnopqrstuvwxyz/abcdefghijklmnopqrstuvwxyz/abcdefghijklmnopqrstuvwxyz/abcdefghijklmnopqrstuvwxyz:/container/path6:ro"
+      dnsServers:#
+        - "127.0.0.1"
+        - "8.8.8.8"
+      dnsSearch:#
+        - "127.0.0.1"
+        - "8.8.8.8"
+      ulimits:#
+        - name: cpu
+          hard: 5
+          soft: 3
+        - name: core
+          hard: 10
+          soft: 5
+      labels:#
+        labelone: valueOne
+        labeltwo: valueTwo
+      entryPoint:#
+        - '/bin/sh'
+        - './entrypoint2.sh'
+        
+  - name: extdopt-ddc2
+    type: dockerOptions
+    version:
+      links:
+        - "fl-img5workingdir"#
+      volumesFrom:#
+        - "fl-img5workingdir:ro"
+      user: "driftking"#
+      workingDir: "/makemeworking"#
+      cmd:#
+        - "node"
+        - "job.js"
+      logConfig:#
+        type: "json-file"
+        options:
+          max-size: 50m
+      readOnlyRootFilesystem : true#
+      network : "bridge"#
