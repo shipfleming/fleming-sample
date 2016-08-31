@@ -124,7 +124,6 @@ jobs:
     steps:
      # - IN: tpm-manifest1
       - IN: tpm-manifest2multiimg
-        switch: off
       - IN: fl-dopts
       - IN: fl-ecscluster
       
