@@ -14,11 +14,11 @@ jobs:
   - name: extdopt-manifest2multiimg
     type: manifest
     steps:
-      - IN: fl-image2
+      - IN: fl-image6entrypoint
       - IN: fl-image7workingdir
       - IN: flecs-dopts5
         applyTo:
-          - fl-image2
+          - fl-image6entrypoint
       - IN: extdopt-tg2
       
   - name: extdopt-manifest3entrypt
@@ -67,6 +67,15 @@ jobs:
       - IN: extdopt-manifest4driftking
       - IN: fltp-dopts1
       - IN: fl-tripubcluster
+      - TASK: managed
+        deployMethod: upgrade
+        
+  - name: extdopt-gkedeploywdir
+    type: deploy
+    steps:
+      - IN: extdopt-manifest4driftking
+      - IN: flgke-dopts3
+      - IN: fl-gkecluster
       - TASK: managed
         deployMethod: upgrade
         
