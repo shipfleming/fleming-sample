@@ -9,23 +9,11 @@ jobs:
        # versionNumber: 100
       - IN: tpm-tg1
       
-  - name: tpm-manifest2multiimg
-    type: manifest
-    steps:
-      - IN: fl-image6entrypoint
-      - IN: fl-image7workingdir
-     # - IN: fltp-dopts2
-      # - IN: flecs-dopts4
-      #   applyTo:
-      #     - fl-image6entrypoint
-      - IN: tpm-tg2
-      
   - name: tpm-manifest3multiimg
     type: manifest
     steps:
       - IN: fl-image6entrypoint
       - IN: fl-image7workingdir
-     # - IN: fltp-dopts2
       - IN: flecs-dopts4
         applyTo:
           - fl-image6entrypoint
@@ -120,25 +108,7 @@ jobs:
       #- IN: fltp-dopts1
       #- IN: fl-tripubcluster
     #  - TASK: managed
-     #   deployMethod: upgrade
-      
-  - name: tpm-tpdeploybg1
-    type: deploy
-    steps:
-      - IN: tpm-manifest1
-      - IN: tpm-manifest2multiimg
-        switch: off
-      - IN: fl-dopts
-      - IN: fl-tripubcluster
-      
-  - name: tpm-ecsdeploybg1
-    type: deploy
-    steps:
-      - IN: tpm-manifest1
-      - IN: tpm-manifest2multiimg
-        switch: off
-      - IN: fl-dopts
-      - IN: fl-ecscluster
+#     #   deployMethod: upgrade
       
   - name: tpm-ecsdeploybg2
     type: deploy
