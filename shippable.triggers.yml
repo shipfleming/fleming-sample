@@ -1,15 +1,15 @@
 triggers:
-   - name: fl-tg1
+   - name: tpm-tg1
      type: trigger
      version:
-       counter: 3
+       counter: 0
        
-   - name: fl-tg2
+   - name: tpm-tg2
      type: trigger
      version:
-       counter: 3
+       counter: 0
        
-   - name: fl-tg3
+   - name: tpm-tg3
      type: trigger
      version:
-       counter: 2
+       counter: 0
