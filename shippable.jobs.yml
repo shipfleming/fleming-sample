@@ -52,14 +52,14 @@ jobs:
       - TASK: managed
         deployMethod: upgrade
         
-#   - name: extdopt-tpdeployept #First deploy something in tripub n copy conatiner name n give in fltp-dopts2 resource
-#     type: deploy
-#     steps:
-#       - IN: extdopt-manifest3entrypt
-#       - IN: fltp-dopts2
-#       - IN: fl-tripubcluster
-#       - TASK: managed
-#         deployMethod: upgrade
+  - name: extdopt-tpdeployept #First deploy something in tripub n copy conatiner name n give in fltp-dopts2 resource
+    type: deploy
+    steps:
+      - IN: extdopt-manifest3entrypt
+      - IN: fltp-dopts2
+      - IN: fl-tripubcluster
+      - TASK: managed
+        deployMethod: upgrade
 
   - name: extdopt-tpdeploywdir
     type: deploy
@@ -86,9 +86,9 @@ jobs:
       - IN: extdopt-ddc1
       - IN: fl-ddccluster
         
-#   - name: extdopt-ddcdeploywdir #First deploy something in ddc n copy conatiner name n give in extdopt-ddc2 resource
-#     type: deploy
-#     steps:
-#       - IN: extdopt-manifest4driftking
-#       - IN: extdopt-ddc2
-#       - IN: fl-ddccluster
+  - name: extdopt-ddcdeploywdir #First deploy something in ddc n copy conatiner name n give in extdopt-ddc2 resource
+    type: deploy
+    steps:
+      - IN: extdopt-manifest4driftking
+      - IN: extdopt-ddc2
+      - IN: fl-ddccluster
