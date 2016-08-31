@@ -235,13 +235,13 @@ resources:
       memory: 100
       cpuShares: 0
       privileged: false
-      #volumes:
+      volumes:
       #  - "/host/path.2:/container/path:rw"
        # - "/host/path:/container/path2:rw"
         # - "/host/path2:/container/path3:ro"
         # - "/host/path..2:/container/path4:rw"
         # - "/host/path..3:/container/path5:ro"
-        #- "/abcdefghijklmnopqrstuvwxyz/abcdefghijklmnopqrstuvwxyz/abcdefghijklmnopqrstuvwxyz/abcdefghijklmnopqrstuvwxyz/abcdefghijklmnopqrstuvwxyz/abcdefghijklmnopqrstuvwxyz/abcdefghijklmnopqrstuvwxyz/abcdefghijklmnopqrstuvwxyz/abcdefghijklmnopqrstuvwxyz/abcdefghijklmnopqrstuvwxyz:/container/path6:ro"
+        - "/abcdefghijklmnopqrstuvwxyz/abcdefghijklmnopqrstuvwxyz/abcdefghijklmnopqrstuvwxyz/abcdefghijklmnopqrstuvwxyz/abcdefghijklmnopqrstuvwxyz/abcdefghijklmnopqrstuvwxyz/abcdefghijklmnopqrstuvwxyz/abcdefghijklmnopqrstuvwxyz/abcdefghijklmnopqrstuvwxyz/abcdefghijklmnopqrstuvwxyz:/container/path6:ro"
       dnsServers:
         - "127.0.0.1"
         - "8.8.8.8"
@@ -258,13 +258,13 @@ resources:
       labels:
         labelone: valueOne
         labeltwo: valueTwo
-     # portMappings:
-      #  - "80:80"
-      # entryPoint:
-      #   - '/bin/sh'
-      #   - './entrypoint2.sh'
+      portMappings:
+        - "80:80"
+      entryPoint:
+        - '/bin/sh'
+        - './entrypoint2.sh'
       # readOnlyRootFilesystem : true
-      # network : "bridge"
+      network : "bridge"
        
   - name: flecs-dopts5
     type: dockerOptions
