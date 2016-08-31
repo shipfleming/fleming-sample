@@ -6,6 +6,126 @@ resources:
     type: integration
     integration: "plv2-ecs"
     
+  - name: fltp-dopts1
+    type: dockerOptions
+    version:
+      memory: 128
+      user: "driftking"
+      workingDir: "/makemeworking"
+      publishAllPorts: true
+      cmd:
+        - "node"
+        - "job.js"
+      dnsServers:
+        - "127.0.8.1"
+      dnsSearch:
+        - "127.8.0.1"
+      logConfig:
+        type: "json-file"
+        options:
+          max-size: 50m
+      privileged: true
+      labels:
+        labelone: valueOne
+        labeltwo: valueTwo
+      volumes:
+        - "s1"
+        - "s2"
+        - "s3"
+        - "s4"
+        - "s5"
+        
+  - name: fltp-dopts2
+    type: dockerOptions
+    version:
+      entryPoint:
+        - '/bin/sh'
+        - './entrypoint2.sh'
+      links:
+        - "extdopt-manifest4driftking_0_0_754c06c4-ada6-4017-87b2-ecd42b8ea1ff:testenv"
+      volumesFrom:
+          - "extdopt-manifest4driftking_0_0_754c06c4-ada6-4017-87b2-ecd42b8ea1ff"
+          - "basedataContainer:ro" # this wont accept only one volumeForm will be considered
+       
+  - name: flgke-dopts3
+    type: dockerOptions
+    version:
+      memory: 64
+      cpuShares: 2
+      entryPoint:
+        - "mongod"
+      workingDir: "/home/test"
+      cmd:
+        - "pwd"
+        - "true"
+      privileged: false
+      user: 0
+      volumes:
+        - "/host/path.2:/container/path:rw"
+        - "/host/path:/container/path2:rw"
+       # - "/host/path2:/container/path3:ro"
+        - "/host/path..2:/container/path4:rw"
+        - "/host/path..3:/container/path5:ro"
+        - "/abcdefghijklmnopqrstuvwxyz/abcdefghijklmnopqrstuvwxyz/abcdefghijklmnopqrstuvwxyz/abcdefghijklmnopqrstuvwxyz/abcdefghijklmnopqrstuvwxyz/abcdefghijklmnopqrstuvwxyz/abcdefghijklmnopqrstuvwxyz/abcdefghijklmnopqrstuvwxyz/abcdefghijklmnopqrstuvwxyz/abcdefghijklmnopqrstuvwxyz:/container/path6:ro"
+      labels:
+        labelone: valueOne
+        labeltwo: valueTwo
+      readOnlyRootFilesystem : true
+        
+  - name: flecs-dopts4
+    type: dockerOptions
+    version:
+      memory: 100
+      cpuShares: 0
+      privileged: false
+      volumes:
+      #  - "/host/path.2:/container/path:rw"
+       # - "/host/path:/container/path2:rw"
+        # - "/host/path2:/container/path3:ro"
+        # - "/host/path..2:/container/path4:rw"
+        # - "/host/path..3:/container/path5:ro"
+        - "/abcdefghijklmnopqrstuvwxyz/abcdefghijklmnopqrstuvwxyz/abcdefghijklmnopqrstuvwxyz/abcdefghijklmnopqrstuvwxyz/abcdefghijklmnopqrstuvwxyz/abcdefghijklmnopqrstuvwxyz/abcdefghijklmnopqrstuvwxyz/abcdefghijklmnopqrstuvwxyz/abcdefghijklmnopqrstuvwxyz/abcdefghijklmnopqrstuvwxyz:/container/path6:ro"
+      dnsServers:
+        - "127.0.0.1"
+        - "8.8.8.8"
+      dnsSearch:
+        - "127.0.0.1"
+        - "8.8.8.8"
+      ulimits:
+        - name: cpu
+          hard: 5
+          soft: 3
+        - name: core
+          hard: 10
+          soft: 5
+      labels:
+        labelone: valueOne
+        labeltwo: valueTwo
+      portMappings:
+        - "80:80"
+      entryPoint:
+        - '/bin/sh'
+        - './entrypoint2.sh'
+      readOnlyRootFilesystem : true
+       
+  - name: flecs-dopts5
+    type: dockerOptions
+    version:
+      links:
+        - "fl-image7workingdir"
+      volumesFrom:
+        - "fl-image7workingdir:ro"
+      user: "driftking"
+      workingDir: "/makemeworking"
+      cmd:
+        - "node"
+        - "job.js"
+      logConfig:
+        type: "json-file"
+        options:
+          max-size: 50m
+      network : "bridge"
+    
   - name: extdopt-ddc1
     type: dockerOptions
     version:
