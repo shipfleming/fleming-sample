@@ -264,7 +264,6 @@ resources:
         - '/bin/sh'
         - './entrypoint2.sh'
       readOnlyRootFilesystem : true
-      
        
   - name: flecs-dopts5
     type: dockerOptions
@@ -282,7 +281,7 @@ resources:
         type: "json-file"
         options:
           max-size: 50m
-    #  network : "bridge"
+      network : "bridge"
   
   - name: fl-dopts6invalid
     type: dockerOptions
