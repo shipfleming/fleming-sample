@@ -15,9 +15,9 @@ jobs:
       - IN: fl-image2
       - IN: fl-image7workingdir
      # - IN: fltp-dopts2
-      - IN: flecs-dopts4
-        applyTo:
-          - fl-image2
+      # - IN: flecs-dopts4
+      #   applyTo:
+      #     - fl-image2
       - IN: tpm-tg2
       
 #   - name: fl-manifest3env
