@@ -192,17 +192,17 @@ resources:
         - "s4"
         - "s5"
         
- # - name: fltp-dopts2
-  #  type: dockerOptions
-   # version:
-    #  entryPoint:
-     #   - '/bin/sh'
-      #  - './entrypoint2.sh'
-      #links:
-       # - "plv2-manifest8redis_0_0_055d5014-109c-4c84-9bbe-3009a523972f:testenv"
-      #volumesFrom:
-       #   - "plv2-manifest5entrypointdopt_0_0_03c3505a-a99b-46a9-8fd6-7f4d2516abb5"
-        #  - "basedataContainer:ro"
+  - name: fltp-dopts2
+    type: dockerOptions
+    version:
+      entryPoint:
+        - '/bin/sh'
+        - './entrypoint2.sh'
+      links:
+        - "extdopt-manifest4driftking_0_0_754c06c4-ada6-4017-87b2-ecd42b8ea1ff:testenv"
+      volumesFrom:
+          - "extdopt-manifest4driftking_0_0_754c06c4-ada6-4017-87b2-ecd42b8ea1ff"
+          - "basedataContainer:ro" # this wont accept only one volumeForm will be considered
        
   - name: flgke-dopts3
     type: dockerOptions
