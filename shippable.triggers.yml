@@ -12,4 +12,4 @@ triggers:
    - name: tpm-tg3
      type: trigger
      version:
-       counter: 0
+       counter: 1
