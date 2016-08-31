@@ -263,8 +263,8 @@ resources:
       # entryPoint:
       #   - '/bin/sh'
       #   - './entrypoint2.sh'
-      readOnlyRootFilesystem : true
-      network : "bridge"
+      # readOnlyRootFilesystem : true
+      # network : "bridge"
        
   - name: flecs-dopts5
     type: dockerOptions
