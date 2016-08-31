@@ -7,17 +7,17 @@ triggers:
    - name: extdopt-tg2
      type: trigger
      version:
-       counter: 0
+       counter: 1
        
    - name: extdopt-tg3
      type: trigger
      version:
-       counter: 0
+       counter: 1
        
    - name: extdopt-tg4
      type: trigger
      version:
-       counter: 0
+       counter: 1
        
    - name: extdopt-tg5
      type: trigger
