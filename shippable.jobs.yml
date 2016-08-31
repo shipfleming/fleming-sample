@@ -133,6 +133,15 @@ jobs:
       - IN: fl-dopts
       - IN: fl-tripubcluster
       
+  - name: fl-ecsdeploybg1
+    type: deploy
+    steps:
+      - IN: fl-manifest1
+      - IN: fl-manifest2multiimg
+        switch: off
+      - IN: fl-dopts
+      - IN: fl-ecscluster
+      
  # - name: fl-gkedeployup
   #  type: deploy
    # steps:
