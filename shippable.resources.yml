@@ -282,7 +282,7 @@ resources:
         type: "json-file"
         options:
           max-size: 50m
-      network : "bridge"
+    #  network : "bridge"
   
   - name: fl-dopts6invalid
     type: dockerOptions
