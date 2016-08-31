@@ -1,28 +1,15 @@
 jobs:
-
-#RELEASE
-
-  - name: fl-release
-    type: release
-    steps:
-      - IN: fl-version
-        #versionName: testrelease
-      - TASK: managed
-        bump: beta
-      - IN: fl-tg3
-    flags:
-      - release_flmaster
       
 #MANIFESTS
       
-  - name: fl-manifest1
+  - name: tpm-manifest1
     type: manifest
     steps:
       - IN: fl-image1
        # versionNumber: 100
-      - IN: fl-tg1
+      - IN: tpm-tg1
       
-  - name: fl-manifest2multiimg
+  - name: tpm-manifest2multiimg
     type: manifest
     steps:
       - IN: fl-image2
@@ -31,7 +18,7 @@ jobs:
       - IN: flecs-dopts4
         applyTo:
           - fl-image2
-      - IN: fl-tg2
+      - IN: tpm-tg2
       
 #   - name: fl-manifest3env
 #     type: manifest
@@ -124,19 +111,19 @@ jobs:
     #  - TASK: managed
      #   deployMethod: upgrade
       
-  - name: fl-tpdeploybg1
+  - name: tpm-tpdeploybg1
     type: deploy
     steps:
-      - IN: fl-manifest1
-      - IN: fl-manifest2multiimg
+      - IN: tpm-manifest1
+      - IN: tpm-manifest2multiimg
       - IN: fl-dopts
       - IN: fl-tripubcluster
       
-  - name: fl-ecsdeploybg1
+  - name: tpm-ecsdeploybg1
     type: deploy
     steps:
-      - IN: fl-manifest1
-      - IN: fl-manifest2multiimg
+      - IN: tpm-manifest1
+      - IN: tpm-manifest2multiimg
       - IN: fl-dopts
       - IN: fl-ecscluster
       
