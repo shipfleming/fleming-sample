@@ -143,7 +143,7 @@ jobs:
   - name: tpm-ecsdeploybg2
     type: deploy
     steps:
-      - IN: tpm-manifest1
+    #  - IN: tpm-manifest1
       - IN: tpm-manifest3multiimg
       - IN: fl-ecscluster
       
