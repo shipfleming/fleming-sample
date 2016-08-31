@@ -258,13 +258,13 @@ resources:
       labels:
         labelone: valueOne
         labeltwo: valueTwo
-      # portMappings:
-      #   - "80:80"
+      portMappings:
+        - "80:80"
       entryPoint:
         - '/bin/sh'
         - './entrypoint2.sh'
       readOnlyRootFilesystem : true
-      #network : "bridge"
+      
        
   - name: flecs-dopts5
     type: dockerOptions
@@ -282,6 +282,7 @@ resources:
         type: "json-file"
         options:
           max-size: 50m
+      network : "bridge"
   
   - name: fl-dopts6invalid
     type: dockerOptions
