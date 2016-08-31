@@ -114,7 +114,7 @@ jobs:
   - name: tpm-tpdeploybg1
     type: deploy
     steps:
-      - IN: tpm-manifest1
+     # - IN: tpm-manifest1
       - IN: tpm-manifest2multiimg
       - IN: fl-dopts
       - IN: fl-tripubcluster
@@ -124,6 +124,7 @@ jobs:
     steps:
      # - IN: tpm-manifest1
       - IN: tpm-manifest2multiimg
+        switch: off
       - IN: fl-dopts
       - IN: fl-ecscluster
       
