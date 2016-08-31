@@ -20,6 +20,17 @@ jobs:
       #     - fl-image6entrypoint
       - IN: tpm-tg2
       
+  - name: tpm-manifest3multiimg
+    type: manifest
+    steps:
+      - IN: fl-image6entrypoint
+      - IN: fl-image7workingdir
+     # - IN: fltp-dopts2
+      - IN: flecs-dopts4
+        applyTo:
+          - fl-image6entrypoint
+      - IN: tpm-tg3
+      
 #   - name: fl-manifest3env
 #     type: manifest
 #     steps:
@@ -127,6 +138,13 @@ jobs:
       - IN: tpm-manifest2multiimg
         switch: off
       - IN: fl-dopts
+      - IN: fl-ecscluster
+      
+  - name: tpm-ecsdeploybg2
+    type: deploy
+    steps:
+      - IN: tpm-manifest1
+      - IN: tpm-manifest3multiimg
       - IN: fl-ecscluster
       
  # - name: fl-gkedeployup
