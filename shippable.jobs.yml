@@ -129,7 +129,6 @@ jobs:
     steps:
       - IN: fl-manifest1
       - IN: fl-manifest2multiimg
-        switch: off
       - IN: fl-dopts
       - IN: fl-tripubcluster
       
@@ -138,7 +137,6 @@ jobs:
     steps:
       - IN: fl-manifest1
       - IN: fl-manifest2multiimg
-        switch: off
       - IN: fl-dopts
       - IN: fl-ecscluster
       
