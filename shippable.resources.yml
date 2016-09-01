@@ -1,9 +1,14 @@
-#IMAGES
+resources:
         
 #INTEGRATION
 
   - name: tpm-tripubintegration
     type: integration
     integration: "plv2-tripub"
+    
+  - name: tpm-version
+    type: version
+    seed:
+      versionName: "4.3.21"
     
 
