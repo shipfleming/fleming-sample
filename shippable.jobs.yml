@@ -44,14 +44,11 @@ jobs:
 #       - TASK: managed
 #         deployMethod: upgrade
         
-#   - name: extdopt-ecsdeployept
-#     type: deploy
-#     steps:
-#       - IN: extdopt-manifest3entrypt
-#       - IN: extdoptecs-dopts4
-#       - IN: fl-ecscluster
-#       - TASK: managed
-#         deployMethod: upgrade
+  - name: extdopt-ecsdeployept
+    type: deploy
+    steps:
+      - IN: extdopt-manifest3entrypt
+      - IN: fl-ecscluster
         
 #   - name: extdopt-tpdeployept #First deploy something in tripub n copy conatiner name n give in fltp-dopts2 resource
 #     type: deploy
