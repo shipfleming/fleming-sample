@@ -1,5 +1,13 @@
 jobs:
       
+  - name: tpm-release
+    type: release
+    steps:
+      - IN: tpm-version
+        #versionName: testrelease
+      - TASK: managed
+        bump: major
+        
 #MANIFESTS
       
   - name: tpm-manifest1
