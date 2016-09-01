@@ -6,7 +6,7 @@ resources:
     type: integration
     integration: "plv2-ecs"
     
-  - name: fltp-dopts1
+  - name: extdopttp-dopts1
     type: dockerOptions
     version:
       memory: 128
@@ -35,7 +35,7 @@ resources:
         - "s4"
         - "s5"
         
-  - name: fltp-dopts2
+  - name: extdopttp-dopts2
     type: dockerOptions
     version:
       entryPoint:
@@ -47,7 +47,7 @@ resources:
           - "extdopt-manifest4driftking_0_0_754c06c4-ada6-4017-87b2-ecd42b8ea1ff"
           - "basedataContainer:ro" # this wont accept only one volumeForm will be considered
        
-  - name: flgke-dopts3
+  - name: extdoptgke-dopts3
     type: dockerOptions
     version:
       memory: 64
@@ -72,7 +72,7 @@ resources:
         labeltwo: valueTwo
       readOnlyRootFilesystem : true
         
-  - name: flecs-dopts4
+  - name: extdoptecs-dopts4
     type: dockerOptions
     version:
       memory: 100
@@ -108,7 +108,7 @@ resources:
         - './entrypoint2.sh'
       readOnlyRootFilesystem : true
        
-  - name: flecs-dopts5
+  - name: extdoptecs-dopts5
     type: dockerOptions
     version:
       links:
@@ -126,7 +126,7 @@ resources:
           max-size: 50m
       network : "bridge"
     
-  - name: extdopt-ddc1
+  - name: extdoptddc-dopts6
     type: dockerOptions
     version:
       memory: 48
@@ -159,7 +159,7 @@ resources:
         - '/bin/sh'
         - './entrypoint2.sh'
         
-  - name: extdopt-ddc2
+  - name: extdoptddc-dopts7
     type: dockerOptions
     version:
       links:
