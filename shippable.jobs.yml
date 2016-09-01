@@ -25,6 +25,7 @@ jobs:
     type: manifest
     steps:
       - IN: fl-image6entrypoint
+      - IN: extdoptecs-dopts4
       - IN: extdopt-tg3
       
   - name: extdopt-manifest4driftking
