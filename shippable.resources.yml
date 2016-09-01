@@ -107,6 +107,7 @@ resources:
         - '/bin/sh'
         - './entrypoint2.sh'
       readOnlyRootFilesystem : true
+      network : "bridge"
        
   - name: extdoptecs-dopts5
     type: dockerOptions
