@@ -4,6 +4,7 @@ jobs:
     type: release
     steps:
       - IN: tpm-version
+      - IN: tpm-manifest1
         #versionName: testrelease
       - TASK: managed
         bump: major
