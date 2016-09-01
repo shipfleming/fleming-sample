@@ -1,5 +1,6 @@
 # fleming-sample
 
+###All resource name n job names are same as extdockeropt. If you want to test this. You need to delete that resource.
 
 Points:
 
