@@ -22,9 +22,9 @@ jobs:
     steps:
       - IN: fl-image6entrypoint
       - IN: fl-image7workingdir
-      - IN: flecs-dopts4
-        applyTo:
-          - fl-image6entrypoint
+     # - IN: flecs-dopts4
+      #  applyTo:
+        #  - fl-image6entrypoint
       - IN: tpm-tg3
       
 #   - name: fl-manifest3env
