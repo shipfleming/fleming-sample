@@ -76,38 +76,38 @@ resources:
     type: dockerOptions
     version:
       memory: 100
-      cpuShares: 0
-      privileged: false
-      volumes:
+      # cpuShares: 0
+      # privileged: false
+      #volumes:
       #  - "/host/path.2:/container/path:rw"
        # - "/host/path:/container/path2:rw"
         # - "/host/path2:/container/path3:ro"
         # - "/host/path..2:/container/path4:rw"
         # - "/host/path..3:/container/path5:ro"
-        - "/abcdefghijklmnopqrstuvwxyz/abcdefghijklmnopqrstuvwxyz/abcdefghijklmnopqrstuvwxyz/abcdefghijklmnopqrstuvwxyz/abcdefghijklmnopqrstuvwxyz/abcdefghijklmnopqrstuvwxyz/abcdefghijklmnopqrstuvwxyz/abcdefghijklmnopqrstuvwxyz/abcdefghijklmnopqrstuvwxyz/abcdefghijklmnopqrstuvwxyz:/container/path6:ro"
-      dnsServers:
-        - "127.0.0.1"
-        - "8.8.8.8"
-      dnsSearch:
-        - "127.0.0.1"
-        - "8.8.8.8"
-      ulimits:
-        - name: cpu
-          hard: 5
-          soft: 3
-        - name: core
-          hard: 10
-          soft: 5
-      labels:
-        labelone: valueOne
-        labeltwo: valueTwo
+      #   - "/abcdefghijklmnopqrstuvwxyz/abcdefghijklmnopqrstuvwxyz/abcdefghijklmnopqrstuvwxyz/abcdefghijklmnopqrstuvwxyz/abcdefghijklmnopqrstuvwxyz/abcdefghijklmnopqrstuvwxyz/abcdefghijklmnopqrstuvwxyz/abcdefghijklmnopqrstuvwxyz/abcdefghijklmnopqrstuvwxyz/abcdefghijklmnopqrstuvwxyz:/container/path6:ro"
+      # dnsServers:
+      #   - "127.0.0.1"
+      #   - "8.8.8.8"
+      # dnsSearch:
+      #   - "127.0.0.1"
+      #   - "8.8.8.8"
+      # ulimits:
+      #   - name: cpu
+      #     hard: 5
+      #     soft: 3
+      #   - name: core
+      #     hard: 10
+      #     soft: 5
+      # labels:
+      #   labelone: valueOne
+      #   labeltwo: valueTwo
       portMappings:
         - "80:80"
       entryPoint:
         - '/bin/sh'
         - './entrypoint2.sh'
-      readOnlyRootFilesystem : true
-      network : "bridge"
+      # readOnlyRootFilesystem : true
+      # network : "bridge"
        
   - name: extdoptecs-dopts5
     type: dockerOptions
