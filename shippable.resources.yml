@@ -6,7 +6,7 @@
     type: integration
     integration: "plv2-tripub"
     
-  - name: tpm-version
+  - name: tpm-version1
     type: version
     seed:
       versionName: "11.22.333"
