@@ -14,11 +14,11 @@ jobs:
   - name: extdopt-manifest2multiimg
     type: manifest
     steps:
-      - IN: fl-image6entrypoint
+      - IN: fl-image2
       - IN: fl-image7workingdir
       - IN: extdoptecs-dopts5
         applyTo:
-          - fl-image6entrypoint
+          - fl-image2
       - IN: extdopt-tg2
       
   - name: extdopt-manifest3entrypt
@@ -47,7 +47,7 @@ jobs:
   - name: extdopt-ecsdeployept
     type: deploy
     steps:
-      - IN: extdopt-manifest3entrypt
+      - IN: extdopt-manifest2multiimg
       - IN: fl-ecscluster
         
 #   - name: extdopt-tpdeployept #First deploy something in tripub n copy conatiner name n give in fltp-dopts2 resource
