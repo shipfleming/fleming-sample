@@ -9,6 +9,6 @@ resources:
   - name: tpm-version
     type: version
     seed:
-      versionName: "4.3.21"
+      versionName: "test"
     
 
