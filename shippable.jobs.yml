@@ -16,7 +16,7 @@ jobs:
     steps:
       - IN: fl-image6entrypoint
       - IN: fl-image7workingdir
-      - IN: flecs-dopts5
+      - IN: extdoptecs-dopts5
         applyTo:
           - fl-image6entrypoint
       - IN: extdopt-tg2
@@ -47,7 +47,7 @@ jobs:
 #     type: deploy
 #     steps:
 #       - IN: extdopt-manifest3entrypt
-#       - IN: flecs-dopts4
+#       - IN: extdoptecs-dopts4
 #       - IN: fl-ecscluster
 #       - TASK: managed
 #         deployMethod: upgrade
@@ -56,7 +56,7 @@ jobs:
 #     type: deploy
 #     steps:
 #       - IN: extdopt-manifest3entrypt
-#       - IN: fltp-dopts2
+#       - IN: extdopttp-dopts2
 #       - IN: fl-tripubcluster
 #       - TASK: managed
 #         deployMethod: upgrade
@@ -65,7 +65,7 @@ jobs:
 #     type: deploy
 #     steps:
 #       - IN: extdopt-manifest4driftking
-#       - IN: fltp-dopts1
+#       - IN: extdopttp-dopts1
 #       - IN: fl-tripubcluster
 #       - TASK: managed
 #         deployMethod: upgrade
@@ -74,7 +74,7 @@ jobs:
 #     type: deploy
 #     steps:
 #       - IN: extdopt-manifest4driftking
-#       - IN: flgke-dopts3
+#       - IN: extdoptgke-dopts3
 #       - IN: fl-gkecluster
 #       - TASK: managed
 #         deployMethod: upgrade
@@ -83,12 +83,12 @@ jobs:
 #     type: deploy
 #     steps:
 #       - IN: extdopt-manifest3entrypt
-#       - IN: extdopt-ddc1
+#       - IN: extdoptddc-dopts6
 #       - IN: fl-ddccluster
         
 #   - name: extdopt-ddcdeploywdir #First deploy something in ddc n copy conatiner name n give in extdopt-ddc2 resource
 #     type: deploy
 #     steps:
 #       - IN: extdopt-manifest4driftking
-#       - IN: extdopt-ddc2
+#       - IN: extdoptddc-dopts7
 #       - IN: fl-ddccluster
