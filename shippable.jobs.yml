@@ -49,6 +49,13 @@ jobs:
     steps:
       - IN: extdopt-manifest4multiimg
       - IN: fl-ecscluster
+      
+  - name: extdopt-ecsdeployept
+    type: deploy
+    steps:
+      - IN: extdopt-manifest4multiimg
+      - IN: fl-ecscluster
+      
         
 #   - name: extdopt-tpdeployept #First deploy something in tripub n copy conatiner name n give in fltp-dopts2 resource
 #     type: deploy
