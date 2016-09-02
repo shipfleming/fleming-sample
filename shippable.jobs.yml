@@ -44,7 +44,7 @@ jobs:
 #       - TASK: managed
 #         deployMethod: upgrade
         
-  - name: extdopt-ecsdeploytest
+  - name: extdopt-deptestpm
     type: deploy
     steps:
       - IN: extdopt-manifest4multiimg
