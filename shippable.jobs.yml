@@ -11,7 +11,7 @@ jobs:
     flags:
       - man_flextdpots
       
-  - name: extdopt-manifest2multiimg
+  - name: extdopt-manifest4multiimg
     type: manifest
     steps:
       - IN: fl-image2
@@ -44,10 +44,10 @@ jobs:
 #       - TASK: managed
 #         deployMethod: upgrade
         
-  - name: extdopt-ecsdeployept
+  - name: extdopt-ecsdeploytest
     type: deploy
     steps:
-      - IN: extdopt-manifest2multiimg
+      - IN: extdopt-manifest4multiimg
       - IN: fl-ecscluster
         
 #   - name: extdopt-tpdeployept #First deploy something in tripub n copy conatiner name n give in fltp-dopts2 resource
