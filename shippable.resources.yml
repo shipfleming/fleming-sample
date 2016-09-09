@@ -95,7 +95,7 @@ resources:
     type: cluster
     integration: plv2-dcl
     pointer:
-     sourceName : "cluster-dcl"
+      sourceName : "cluster-dcl"
 
   - name: fl-ecscluster
     type: cluster
